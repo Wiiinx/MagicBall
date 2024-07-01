@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Super Magic 8 Ball</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <link >
 </head>
-<body>
-    <div class="center">
-        <h1>陈梦雨今天吃什么</h1>
-        <button class="button-54" role="button" onClick="shake()">摇一摇</button>
-    </div>
-    <div class="row">
-        <img id="ball" alt="Magic 8 Ball" src="8ball.png">
-        <div id="food">
-
+<body class="flex flex-col items-center justify-center h-screen bg-gradient-to-t from-purple-800 to-blue-400 text-white">
+    <div class="container">
+        <header class="header fixed top-0 w-full text-center py-4">
+            <h1 class="text-white font-bold" style="font-size: 5rem;">今天吃什么</h1>
+        </header>
+        <div id="toast-container" class="mt-24 w-full flex justify-center"></div>
+        <div class="image-container mt-4 flex flex-col items-center">
+            <img id="ball" class="responsive-img w-5/6 max-w-xs md:max-w-md" alt="Magic 8 Ball" src="8ball.png">
+            <div id="message" class="mt-4"></div>
+        </div>
+        <div class="center fixed inset-x-0 bottom-8 flex justify-center">
+            <button class="button-85 px-8 py-4 bg-black text-white rounded-full text-xl" role="button" onClick="shake()">摇一摇</button>
         </div>
     </div>
-
+    <script src="scripts.js"></script>
 </body>
 </html>
-
-<script src="scripts.js"></script>

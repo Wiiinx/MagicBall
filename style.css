@@ -1,89 +1,324 @@
-.shake{
+/* Keyframe animation for shake effect */
+.shake {
     animation: shake 0.5s;
-    
+}/* Keyframe animation for shake effect */
+.shake {
+    animation: shake 0.5s;
 }
+
 @keyframes shake {
-    0% {transform: translate(4px, 4px) rotate(0deg);}
-    10% {transform: translate(-4px, -4px) rotate(-1deg);}
-    20% {transform: translate(-7px, 0px) rotate(1deg);}
-    30% {transform: translate(7px, 4px) rotate(0deg);}
-    40% {transform: translate(4px, -4px) rotate(1deg);}
-    50% {transform: translate(-4px, 4px) rotate(-1deg);}
-    60% {transform: translate(-7px, 4px) rotate(0deg);}
-    70% {transform: translate(7px, 4px) rotate(-1deg);}
-    80% {transform: translate(-4px, -4px) rotate(1deg);}
-    90% {transform: translate(4px, 4px) rotate(0deg);}
-    100% {transform: translate(4px, -4px) rotate(-1deg);}
+    0% { transform: translate(4px, 4px) rotate(0deg); }
+    10% { transform: translate(-4px, -4px) rotate(-1deg); }
+    20% { transform: translate(-7px, 0px) rotate(1deg); }
+    30% { transform: translate(7px, 4px) rotate(0deg); }
+    40% { transform: translate(4px, -4px) rotate(1deg); }
+    50% { transform: translate(-4px, 4px) rotate(-1deg); }
+    60% { transform: translate(-7px, 4px) rotate(0deg); }
+    70% { transform: translate(7px, 4px) rotate(-1deg); }
+    80% { transform: translate(-4px, -4px) rotate(1deg); }
+    90% { transform: translate(4px, 4px) rotate(0deg); }
+    100% { transform: translate(4px, -4px) rotate(-1deg); }
 }
 
-/*https://github.com/TakWolf/ark-pixel-font*/
-body{
-    font-family: "pixel", sans-serif;
-    background-color: #85654d;
-    background-image: url("https://www.transparenttextures.com/patterns/textured-paper.png");
-
-}
-h1{
-    font-size: 4em;
-}
-
-#message{
-    font-size: 2em;
-    color: black;
-}
-
+/* Font import and styling */
 @font-face {
-  font-family: "pixel", monospace;
-  src: url("pixel.woff2") format('woff2');
+    font-family: "pixel", monospace;
+    src: url("pixel.woff2") format('woff2');
 }
 
-.center {
+body {
+    font-family: "pixel", sans-serif;
+    background: rgb(136,188,230);
+    background: -moz-linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    background: -webkit-linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    background: linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#88bce6", endColorstr="#28202d", GradientType=1);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    padding-top: 2em;
+    color: white; /* Changed text color to white for better contrast */
 }
 
-.img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* This will take the full height of the viewport */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* this will take the full height of the viewport */
-    flex-direction: column; /* this stacks the items vertically */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em 0;
+    z-index: 10;
+    text-align: center;
+    background: transparent; /* Removed background color */
 }
+
+h1 {
+    font-size: 5rem; /* Set font size to 5rem */
+    font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
+}
+
+#message {
+    font-size: 2em;
+    color: white;
+}
+
+/* Centering elements */
+.center {
+    margin-top: 150px; /* Adjust margin to avoid overlapping with the fixed header */
+    text-align: center;
+}
+
+/* Ensuring the image is responsive */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px; /* Ensure there's spacing below the header */
+    flex-grow: 1; /* Allow it to grow and take available space */
+    justify-content: center;
+    width: 100%;
+}
+
+
 
 /* CSS */
-.button-54 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
+.button-85 {
+  padding: 1.2em 4em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
   cursor: pointer;
-  border: 3px solid;
-  padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
   position: relative;
+  z-index: 0;
+  border-radius: 10px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-size: 1.5em;
 }
 
-.button-54:active {
-  box-shadow: 0px 0px 0px 0px;
-  top: 5px;
-  left: 5px;
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-@media (min-width: 768px) {
-  .button-54 {
-    padding: 0.25em 0.75em;
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes shake {
+    0% { transform: translate(4px, 4px) rotate(0deg); }
+    10% { transform: translate(-4px, -4px) rotate(-1deg); }
+    20% { transform: translate(-7px, 0px) rotate(1deg); }
+    30% { transform: translate(7px, 4px) rotate(0deg); }
+    40% { transform: translate(4px, -4px) rotate(1deg); }
+    50% { transform: translate(-4px, 4px) rotate(-1deg); }
+    60% { transform: translate(-7px, 4px) rotate(0deg); }
+    70% { transform: translate(7px, 4px) rotate(-1deg); }
+    80% { transform: translate(-4px, -4px) rotate(1deg); }
+    90% { transform: translate(4px, 4px) rotate(0deg); }
+    100% { transform: translate(4px, -4px) rotate(-1deg); }
+}
+
+/* Font import and styling */
+@font-face {
+    font-family: "pixel", monospace;
+    src: url("pixel.woff2") format('woff2');
+}
+
+body {
+    font-family: "pixel", sans-serif;
+    background: rgb(136,188,230);
+    background: -moz-linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    background: -webkit-linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    background: linear-gradient(0deg, rgba(136,188,230,1) 1%, rgba(123,88,175,1) 39%, rgba(59,45,69,1) 73%, rgba(40,32,45,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#88bce6", endColorstr="#28202d", GradientType=1);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white; /* Changed text color to white for better contrast */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 1em 0;
+    z-index: 10;
+    text-align: center;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
+}
+
+#message {
+    font-size: 2em;
+    color: white;
+}
+
+/* Centering elements */
+.center {
+    margin-top: 150px; /* Adjust margin to avoid overlapping with the fixed header */
+    text-align: center;
+}
+
+/* Ensuring the image is responsive */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem; /* Ensure there's spacing below the header */
+    flex-grow: 1; /* Allow it to grow and take available space */
+    justify-content: center;
+    width: 100%;
+}
+
+.responsive-img {
+    max-width: 90%; /* Increased max-width to make the ball bigger */
+    min-width: 80%; /* Increased min-width to make the ball bigger */
+    height: auto;
+}
+
+
+/* CSS */
+.button-85 {
+  padding: 1.2em 4em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 1.5em;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
